@@ -127,6 +127,16 @@ do
   -- Enable break indent
   vim.o.breakindent = true
 
+  -- Use 4 spaces for indentation.
+  --  `tabstop` sets how wide a tab character looks; `shiftwidth` sets how much
+  --  `>>`/`<<` and auto-indent move; `expandtab` inserts spaces instead of tabs.
+  --  NOTE: guess-indent.nvim will override these per-file when it detects an
+  --  existing indentation style, so these act as the default for new files.
+  vim.o.tabstop = 4
+  vim.o.shiftwidth = 4
+  vim.o.softtabstop = 4
+  vim.o.expandtab = true
+
   -- Enable undo/redo changes even after closing and reopening a file
   vim.o.undofile = true
 

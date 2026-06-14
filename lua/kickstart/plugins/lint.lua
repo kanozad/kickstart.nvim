@@ -5,6 +5,16 @@ vim.pack.add { 'https://github.com/mfussenegger/nvim-lint' }
 local lint = require 'lint'
 lint.linters_by_ft = {
   markdown = { 'markdownlint' }, -- Make sure to install `markdownlint` via mason / npm
+  -- Linter binaries are installed via Mason (see the `ensure_installed` list in
+  -- init.lua's LSP section). Note: nvim-lint linter names differ from Mason package names.
+  go = { 'golangcilint' }, -- Mason package: golangci-lint
+  javascript = { 'eslint_d' },
+  typescript = { 'eslint_d' },
+  javascriptreact = { 'eslint_d' },
+  typescriptreact = { 'eslint_d' },
+  python = { 'ruff' },
+  -- Rust diagnostics come from rust_analyzer (it runs cargo check / clippy), so no
+  -- separate nvim-lint entry is needed here.
 }
 
 -- To allow other plugins to add linters to require('lint').linters_by_ft,
